@@ -1,0 +1,143 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+.mt-ten {
+  @apply mt-10;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.sticky-menu {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  cursor: pointer;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media Icons Styles */
+nav a .fab {
+  font-size: 1.2em;
+  color: white;
+  margin-left: 10px;
+}
+
+.menu-item .fab:hover {
+  color: grey;
+}
+
+/* Assuming you're using Font Awesome for the icons */
+/* You can add more specific styles for each icon if needed */
+.social-icon.fa-mail {
+  transform: rotate(180deg);
+}
+
+/* Generic CSS Classes */
+h1 {
+  font-size: 2em;
+  margin-bottom: 1rem; /* Use rem for better scalability */
+}
+
+.paragraph {
+  /* Styles for paragraph elements */
+  line-height: 1.6;
+}
+
+main {
+  padding: 20px; /* Reduced padding */
+}
+
+/* Image Container Styles */
+.image-container {
+  /* Styles for the image container */
+  width: 250px; /* Adjust as needed */
+  height: auto;
+}
+
+/* Works Section Styles */
+.works-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  grid-gap: 1.5rem; /* Spacing between grid items using rem */
+}
+@media (min-width: 768px) {
+  .works-section {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+  }
+}
+
+/* Styles for Work Items */
+.work-item-photo {
+  width: 100%;
+  height: auto;
+  display: block; /* Ensures the image takes up the full width */
+}
+
+.projects-heading {
+  margin-top: 1.5rem; /* Add top margin for spacing */
+  font-size: 2.5rem; /* Use rem for font size */
+  font-weight: bold;
+  /* Responsive font size */
+}
+@media (max-width: 768px) {
+  .projects-heading {
+    font-size: 2.5rem;
+  }
+}
+
+/* Remove grid-area styles, not needed with auto-fit */
+/* ... (removed grid-area styles) ... */
+.work-item-desc {
+  /* Styles for the description */
+}
+
+/* Footer Styles */
+footer {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.work-item {
+  display: grid;
+  gap: 1rem;
+}
+
+.work-item-image img {
+  width: 100%;
+  height: auto;
+}
+
+.work-item-description {
+  font-size: 1rem;
+  color: #333;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacopo Pierantozzi | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans">
+    <nav class="fixed top-0 left-0 w-full bg-black text-white p-4 shadow-md z-50 transition duration-300 ease-in-out">
+        <div class="flex items-center justify-between">
+            <div class="text-lg font-bold">Jacopo Pierantozzi</div>
+            <div class="flex space-x-4">
+                <a href="#home" class="menu-item hover:underline">Home</a>
+                <a href="#projects" class="menu-item hover:underline">Projects</a>
+                <a href="#about" class="menu-item hover:underline">About</a>
+                <a href="https://github.com/JPier34" class="menu-item hover:underline"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/datboi_jpier/?hl=it" class="menu-item hover:underline"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="mt-10">
+        <section id="home" class="h-screen bg-gray-100 flex items-center justify-center">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 text-left opacity-0 transition-opacity duration-1000" id="intro-text">
+                    <h2 class="text-3xl font-bold mb-4">
+                        <span class="border-b-2 border-black">Blockchain Student</span>
+                    </h2>
+                    <p class="text-lg mb-2">Based in Italy.</p>
+                    <p class="text-lg mb-2">Previously an accountant.</p>
+                    <p class="text-lg mb-2">Actually,</p> 
+                    <p class="text-lg">A technology enthusiast.</p>
+                </div>
+                <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                    <!-- Add your photo here -->
+                    <img src="path/to/your/photo.jpg" alt="Your Photo" class="rounded-full w-64 h-64 mx-auto md:mx-0"> 
+                </div>
+            </div>
+        </section>
+    </main>
+    <style>
+        #intro-text {
+            opacity: 1;
+        }
+    </style>
+                <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                    <!-- Add your photo here -->
+                    <img src="path/to/your/photo.jpg" alt="Your Photo" class="rounded-full w-64 h-64 mx-auto md:mx-0"> 
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-gray-200 flex items-center justify-center">
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="work-item work-item-1 grid grid-cols-2 gap-4">
+                    <!-- Add your project content here -->
+                </div>
+                <div class="work-item work-item-2 col-span-2 grid grid-rows-2 gap-4">
+                    <div class="work-item-image">
+                        <!-- Add image for work item 2 here -->
+                        <img src="" alt="Work Item 2 Image">
+                    </div>
+                    <div class="work-item-description">Description for Work Item 2</div>
+                </div>
+                <div class="work-item work-item-3 grid grid-cols-2 gap-4">
+                    <div class="work-item-image">
+                        <!-- Add image for work item 3 here -->
+                        <img src="" alt="Work Item 3 Image">
+                    </div>
+                    <div class="work-item-description">Description for Work Item 3</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="h-screen bg-gray-200 flex items-center justify-center">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 text-left">
+                    <h2 class="text-3xl font-bold mb-4">
+                        <span class="border-b-2 border-black">About Me</span>
+                    </h2>
+                    <p class="text-lg mb-2">I am a blockchain student based in Italy.</p>
+                    <p class="text-lg mb-2">I have a background in accounting and a passion for technology.</p>
+                </div>
+                <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                    <!-- Add more content here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        Jacopo Pierantozzi 2025 | <a href="contact.html">contact me</a>
+    </footer>
+</body>
+</html>
