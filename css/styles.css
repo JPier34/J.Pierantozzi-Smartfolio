@@ -1,24 +1,36 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+@charset "UTF-8";
+/* Variabili */
+/* Stili generali */
 .mt-ten {
   @apply mt-10;
 }
 
+/* Mixin per lo sticky menu */
+/* Stili per l'header */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Stili per lo sticky menu (footer) */
 .sticky-menu {
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
+/* Stili per la navigazione */
 nav a {
   margin: 0 15px;
   cursor: pointer;
@@ -27,92 +39,72 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Social Media Icons Styles */
 nav a .fab {
   font-size: 1.2em;
   color: white;
   margin-left: 10px;
 }
 
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.menu-item:hover {
+  text-decoration: underline;
+  transform: scale(1.15);
+}
+
 .menu-item .fab:hover {
   color: grey;
 }
 
-/* Assuming you're using Font Awesome for the icons */
-/* You can add more specific styles for each icon if needed */
 .social-icon.fa-mail {
   transform: rotate(180deg);
 }
 
-/* Generic CSS Classes */
-h1 {
-  font-size: 2em;
-  margin-bottom: 1rem; /* Use rem for better scalability */
+nav .space-x-4 { /*Stile per lo spazio tra gli elementi*/
+  display: flex;
+  gap: 1rem;
 }
 
-.paragraph {
-  /* Styles for paragraph elements */
-  line-height: 1.6;
-}
-
+/* Stili per il main (padding) 
 main {
-  padding: 20px; /* Reduced padding */
-}
-
-/* Image Container Styles */
-.image-container {
-  /* Styles for the image container */
-  width: 250px; /* Adjust as needed */
-  height: auto;
-}
-
-/* Works Section Styles */
-.works-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-  grid-gap: 1.5rem; /* Spacing between grid items using rem */
-}
-@media (min-width: 768px) {
-  .works-section {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    padding: 20px;
+}*/
+/* Stili generali responsivi */
+@media (max-width: 768px) {
+  /* Modifica lo stile del menu per schermi mobili */
+  .sticky-menu {
+    flex-direction: column; /* Impila gli elementi verticalmente */
+    justify-content: center; /* Allinea al centro verticalmente */
+    align-items: center; /* Allinea al centro orizzontalmente */
+    padding: 15px; /* Aggiungi padding per schermi più piccoli */
   }
-}
-
-/* Styles for Work Items */
-.work-item-photo {
-  width: 100%;
-  height: auto;
-  display: block; /* Ensures the image takes up the full width */
-}
-
-.projects-heading {
-  margin-top: 1.5rem; /* Add top margin for spacing */
-  font-size: 2.5rem; /* Use rem for font size */
-  font-weight: bold;
-  /* Responsive font size */
+  .sticky-menu .flex-grow {
+    display: none; /* Nascondi il separatore su mobile */
+  }
+  .sticky-menu a {
+    margin: 10px 0; /* Aggiungi spazio tra i link su mobile */
+  }
 }
 @media (max-width: 768px) {
-  .projects-heading {
-    font-size: 2.5rem;
+  nav .hidden {
+    display: none;
+  }
+  nav .md\:flex {
+    display: none;
+  }
+  nav .md\:hidden {
+    display: flex;
+  }
+  nav .flex {
+    display: flex;
   }
 }
-
-/* Remove grid-area styles, not needed with auto-fit */
-/* ... (removed grid-area styles) ... */
-.work-item-desc {
-  /* Styles for the description */
-}
-
-/* Footer Styles */
-footer {
-  background-color: black;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-  bottom: 0;
-}
-
+/* Stili per la transizione */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -123,6 +115,59 @@ footer {
 }
 .animate-fade-in {
   animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 1s; /* Ritardo di 1 secondo prima dell'inizio dell'animazione */
+}
+
+/* Assicurati di avere questo CSS nel tuo foglio di stile */
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Stili per gli h1 */
+h1 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
+
+/* Stili per i paragrafi */
+.paragraph {
+  line-height: 1.6;
+  color: white;
+}
+
+/* Stili per le sezioni Works (senza duplicazioni) */
+.image-container {
+  width: 250px;
+  height: auto;
+}
+
+.works-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .works-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.work-item-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.projects-heading {
+  margin-top: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .projects-heading {
+    font-size: 2.5rem;
+  }
 }
 
 .work-item {
@@ -138,4 +183,43 @@ footer {
 .work-item-description {
   font-size: 1rem;
   color: #333;
+}
+
+/* Classe per il footer */
+.footer {
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: center;
+  position: relative; /* o fixed */
+  bottom: 0;
+  width: 100%;
+  display: flex; /* Utilizziamo flexbox per un migliore controllo del layout */
+  justify-content: center; /* Centra orizzontalmente il contenuto */
+  align-items: center; /* Allinea verticalmente il contenuto (opzionale)*/
+  padding: 10px 0; /* Aggiunge un po' di padding per separare il testo dal bordo */
+}
+
+.footer span {
+  margin-right: -5px; /* o la dimensione che preferisci */
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-link {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #0675be; /* Blu Ferrari (circa) */
+  color: #0675be; /* Blu Ferrari (circa) */
+}
+
+.footer:hover span {
+  transform: scale(1); /*Impedisce lo scale al testo Jacopo Pierantozzi*/
 }/*# sourceMappingURL=styles.css.map */
