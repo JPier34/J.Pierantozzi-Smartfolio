@@ -5,42 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jacopo Pierantozzi | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/styles.css">
-
+    <link rel="stylesheet" href="./assets/sass/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 
 <body class="font-sans">
 
 
-    <nav class="sticky-menu flex justify-center">
-        <div class="flex items-center w-full px-4">
-            <div class="text-lg font-bold">Jacopo Pierantozzi</div> 
-            <div class="flex-grow flex justify-center space-x-4">
-                <a href="#about" class="menu-item hover:underline">About</a>
+    <nav class="sticky-menu w-full bg-black text-white py-2 sticky top-0 z-100">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class=" text-base font-bold text-left">
+                <span>J.Pierantozzi</span>
             </div>
-            <div class="flex justify-between row-autospace-x-4">
-                <a href="" class="menu-item hover:underline"><i class="fab fa-mail"></i>
-                <img src="./assets/img/email-envelope-white-icon.png" alt="email-icon" class="w-6 h-6"></a>
-                </a>
-                <a href="https://github.com/JPier34" class="menu-item hover:underline"><i class="fab fa-github"></i>
-                <img src="./assets/img/github-mark-white.png" alt="github-icon" class="w-6 h-6"></a>
-                </a>
-                <a href="https://www.instagram.com/datboi_jpier/?hl=it" class="menu-item hover:underline"><i class="fab fa-instagram"></i>
-                <img src="./assets/img/instagram-white-icon.png" alt="instagram-icon" class="w-6 h-6"></a>
-                </a>
-            </div>           
-        </div>
 
+            <!-- Menu Links -->
+            <div class="menu-links text-center">
+                <a href="#about" class="menu-item hover:underline text-lg sm:font-sans font-semibold">About</a>
+            </div>
+
+            <!-- Social Icons -->
+        <div class="social-icons flex items-center justify-start">
+            <div class="icon-container">
+                <a href="" class="menu-item hover:underline">
+                    <img src="./assets/img/email-envelope-white-icon.png" alt="email-icon" class="w-4 sm:w-2">
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="https://github.com/JPier34" class="menu-item hover:underline">
+                    <img src="./assets/img/github-mark-white.png" alt="github-icon" class="w-4 sm:w-2">
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="https://www.instagram.com/datboi_jpier/?hl=it" class="menu-item hover:underline">
+                    <img src="./assets/img/instagram-white-icon.png" alt="instagram-icon" class="w-4 sm:w-2">
+                </a></div>
+            </div>
+        </div> 
     </nav>
+
+
 
     <main class="relative h-screen w-screen overflow-hidden">
         <div class="absolute inset-0">
             <img src="./assets/img/sfondo testata.jpg" alt="sfondo header" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black opacity-30"></div></div>
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+        </div>
         <div class="absolute inset-0 flex items-center justify-start px-6">
-            <div id="show-text" class="opacity-0 w-full md:w-2/3 lg:w-1/2 animate-fade-in">
-                <span class="border-b-[1px] border-white paragraph text-3xl md:text-4xl font-bold block">J.Pierantozzi</span>
+            <div class="opacity-0 w-full md:w-2/3 lg:w-1/2 animate-fade-in ">
+                <span class="border-b-[1px] border-white text-3xl md:text-4xl font-bold block text-white">Jacopo Pierantozzi</span>
                 <br>
                 <p class="paragraph text-lg md:text-xl mb-2">Based in Italy.</p>
                 <br>
@@ -48,47 +64,72 @@
                 <br>
                 <p class="paragraph text-lg md:text-xl mb-2">Actually,</p>
                 <br>
-                <p class="paragraph text-lg md:text-xl mb-2">A technology enthusiast.</p>
+                <p class="paragraph text-lg md:text-xl">A technology enthusiast.</p>
             </div>
         </div>
     </main>
 
-        
-<div class="projects-heading">Projects.</div> 
+         
 
 
-        <section id="works" class="py-20">
-            <div class="container bg-slate-200 mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="work-item work-item-1 grid grid-cols-2 gap-4"> 
-                    <div class="work-item-image">
-                        <!-- Add image for work item 1 here -->
-                        <img src="" alt="Work Item 1 Image">
+    <section id="works" class="py-20 bg-slate-200 relative">
+        <div class="image-container mx-auto px-4">
+            <div class="projects-heading absolute left-2 lg:left-24 -top-14 lg:-top-23 text-left text-yellow-500 z-15 text-6xl lg:text-8xl font-bold">Projects.</div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-16 lg:pt-20"> 
+                <div class="work-item flex flex-col items-center">
+                    <div class="work-item-image aspect-w-16 aspect-h-9">
+                        <img src="./assets/img/works - fotovoltaic.jpg" alt="Green Energy"
+                            class="w-full h-full object-cover rounded-lg">
                     </div>
-                    <div class="work-item-description">Description for Work Item 1</div>
+                    <p class="work-item-description mt-2 text-center text-sm lg:text-base">
+                        Contabilità presso Sunservice S.r.l., leader nell'energia rinnovabile
+                    </p>
                 </div>
-                
-                <div class="work-item work-item-2 col-span-2 grid grid-rows-2 gap-4"> 
-                    <div class="work-item-image">
-                        <!-- Add image for work item 2 here -->
-                        <img src="" alt="Work Item 2 Image">
+                <div class="work-item flex flex-col items-center">
+                    <div class="work-item-image aspect-w-16 aspect-h-9">
+                        <img src="./assets/img/works - real estate.jpg" alt="Real Estate"
+                            class="w-full h-full object-cover rounded-lg">
                     </div>
-                    <div class="work-item-description">Description for Work Item 2</div>
+                    <p class="work-item-description mt-2 text-center text-sm lg:text-base">
+                        Investitore immobiliare nel centro Italia
+                    </p>
                 </div>
-                
-                <div class="work-item work-item-3 grid grid-cols-2 gap-4">
-                    <div class="work-item-image">
-                        <!-- Add image for work item 3 here -->
-                        <img src="" alt="Work Item 3 Image">
-                    </div>
-                    <div class="work-item-description">Description for Work Item 3</div>
+            </div>
+            <div class="work-item lg:col-span-2 mt-8 lg:mt-12 flex flex-col items-center">
+                <div class="work-item-image w-full lg:w-2/3 mx-auto">
+                    <img src="./assets/img/pexels-leeloothefirst-8358140.jpg" alt="Developing"
+                        class="h-[250px] lg:h-[200px] object-cover rounded-lg mx-auto block">
+                </div>
+                <div class="work-item-description mt-2 text-center w-full lg:w-2/3 mx-auto">
+                    Blockchain developer
+                </div>
+            </div>
+        </div>
+    </section>
+          
+
+        <section class="h-screen bg-green-200 flex items-center justify-center">
+            <div class="container bg-green-500 mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 text-left">
+                    <h2 class="text-3xl font-bold mb-4">
+                        <span class="border-b-2 border-black">About Me</span>
+                    </h2>
+                    <p class="text-lg mb-2">I am a blockchain student based in Italy.</p>
+                    <p class="text-lg mb-2">I have a background in accounting and a passion for technology.</p>
+                </div>
+                <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                    <!-- Add more content here -->
                 </div>
             </div>
         </section>
+    </main>
 
-
-        <section id="about" class="h-screen bg-gray-200">About Content</section>
     <footer class="footer">
-        <span>Jacopo Pierantozzi 2025 |</span><a href="contact.html" class="contact-link">contact me</a>
+        <div class="footer-content">
+            <span>Jacopo Pierantozzi 2025 |</span> <a href="contact.html" class="contact-link">contact me</a>
+        </div>
     </footer>
+
+
 </body>
 </html>

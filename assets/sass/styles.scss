@@ -4,8 +4,16 @@ $sticky-color: white;
 $sticky-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 
 /* Stili generali */
-.mt-ten {
-    @apply mt-10;
+/* Stili per gli h1 */
+h1 {
+    font-size: 2em;
+    margin-bottom: 1rem;
+}
+
+/* Stili per i paragrafi */
+.paragraph {
+    line-height: 1.6;
+    color: white;
 }
 
 /* Mixin per lo sticky menu */
@@ -18,19 +26,17 @@ $sticky-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
 
-/* Stili per l'header */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    @include sticky-style;
-    box-shadow: $sticky-shadow;
-}
-
-/* Stili per lo sticky menu (footer) */
+/* Stili per lo sticky menu */
 .sticky-menu {
     @include sticky-style;
 }
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+  }
 
 /* Stili per la navigazione */
 nav a {
@@ -47,122 +53,137 @@ nav a .fab {
     margin-left: 10px;
 }
 
+/* Stili generali */
 .menu-item {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      text-decoration: underline;
-      transform: scale(1.15);
-}
+    transition: transform 0.2s ease-in-out, color 0.2 ease-in-out;
+    text-decoration: none;
+    color: inherit;
 }
 
-.menu-item .fab:hover {
-    color: grey;
-}
-
-.social-icon {
-    &.fa-mail {
-        transform: rotate(180deg);
+@media (hover: hover) {
+    .menu-item:hover {
+        text-decoration: underline;
+        transform: scale(1.15);
+        color: #0675be; /* Cambia colore al hover */
     }
-}  
+}
 
-nav .space-x-4 { /*Stile per lo spazio tra gli elementi*/
+/* Stili ACTIVE (per click/touch) */
+.menu-item:active {
+    transform: scale(0.95); /* Rimpicciolisce leggermente al click */
+    color: darken(#0675be, 10%); /* Scurisce leggermente il colore al click */
+}
+   
+
+/* Stili per la navigazione */
+nav .space-x-2 {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
-/* Stili per il main (padding) 
-main {
-    padding: 20px;
-}*/
 
-/* Stili generali responsivi */
+/* Stili per le icone social */
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 44px; /* Minimum width for the container */
+    padding: 0 5px; /* Padding for spacing between icons - now on both mobile and desktop*/
+}
+
+.social-icons img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.menu-links {
+    text-align: center;
+  }
+
+/* Stili per desktop */
+@media (min-width: 768px) {
+    .menu-links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; /* Spacing between container elements */
+    }
+    .icon-container{
+        padding: 0 10px;
+    }
+}
+
+/* Stili per mobile (<= 768px) */
 @media (max-width: 768px) {
-    /* Modifica lo stile del menu per schermi mobili */
-    .sticky-menu {
-      flex-direction: column; /* Impila gli elementi verticalmente */
-      justify-content: center; /* Allinea al centro verticalmente */
-      align-items: center; /* Allinea al centro orizzontalmente */
-      padding: 15px; /* Aggiungi padding per schermi più piccoli */
+    .icon-container {
+        padding: 0 0rem;
     }
-  
-    .sticky-menu .flex-grow {
-      display: none; /* Nascondi il separatore su mobile */
+    
+      .menu-links {
+        flex-shrink: 0; /* Assicura che il menu non si riduca troppo */ 
+        text-align: center;
     }
-  
-    .sticky-menu a {
-      margin: 10px 0; /* Aggiungi spazio tra i link su mobile */
+    
+      .social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0px; /* Riduce il gap su dispositivi mobili */
+    align-items: center;
     }
-  }
-  @media (max-width: 768px) {
-    nav .hidden {
-        display: none;
+    
+
     }
 
-    nav .md\:flex{
-        display: none;
-    }
-    nav .md\:hidden {
-        display: flex;
-    }
-    nav .flex{
-        display: flex;
-    }
 
-}
-
-
-
-
-
-
-/* Stili per la transizione */
+/* Stili per la transizione della descrizione*/
 @keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .animate-fade-in {
-  animation: fadeIn 1s ease-in-out forwards;
-  animation-delay: 1s; /* Ritardo di 1 secondo prima dell'inizio dell'animazione */
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s; /* Delay of 1 second before animation starts */
 }
 
-/* Assicurati di avere questo CSS nel tuo foglio di stile */
+
+/* Object-cover class */
 .object-cover {
     object-fit: cover;
 }
 
 
 
-
-/* Stili per gli h1 */
-h1 {
-    font-size: 2em;
-    margin-bottom: 1rem;
-}
-
-/* Stili per i paragrafi */
-.paragraph {
-    line-height: 1.6;
-    color: white;
-}
-
-
-
-
-
-/* Stili per le sezioni Works (senza duplicazioni) */
+/* Stili per le sezioni Works */
 .image-container {
-    width: 250px;
-    height: auto;
+    width: 100%; /* Larghezza al 100% su schermi piccoli */
+    max-width: 1200px; /* Larghezza massima su schermi grandi */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .works-section {
@@ -181,59 +202,85 @@ h1 {
 }
 
 .projects-heading {
-    margin-top: 1.5rem;
+    color:yellow;
+    margin-top: 10.5rem;
     font-size: 2.5rem;
     font-weight: bold;
     @media (max-width: 768px) {
         font-size: 2.5rem;
+        font-weight: bold;
     }
 }
 
 .work-item {
-  display: grid;
-  gap: 1rem;
+    display: grid;
+    gap: 1rem;
 }
 
 .work-item-image img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
 }
 
 .work-item-description {
-font-size: 1rem;
-color: #333;
-}
+    font-size: 1rem;
+    color: #333;
+    margin-top: 0.5rem;
+
+    @media (min-width: 1024px) {
+      font-size: 1.125rem; // Leggermente più grande per il desktop
+    }
+  }
+  
 
 
-/* Classe per il footer */
-.footer {
-    @include sticky-style;
-    text-align: center;
-    position: relative; /* o fixed */
+
+
+
+
+/* Mixin per lo stile del footer */
+@mixin fixed-footer-style {
+    background-color: $sticky-bg;
+    color: $sticky-color;
+    padding: 10px 0;
     bottom: 0;
     width: 100%;
-    display: flex; /* Utilizziamo flexbox per un migliore controllo del layout */
-    justify-content: center; /* Centra orizzontalmente il contenuto */
-    align-items: center; /* Allinea verticalmente il contenuto (opzionale)*/
-    padding: 10px 0; /* Aggiunge un po' di padding per separare il testo dal bordo */
+    z-index: 10;
 }
 
-.footer span {
-    margin-right: -5px; /* o la dimensione che preferisci */
-    transition: transform 0.3s ease-in-out;
-}
 
-.contact-link {
-    margin: 0 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-    .contact-link:hover {    
-    text-decoration: underline;
-    text-decoration-color: #0675be; /* Blu Ferrari (circa) */;
-    color: #0675be; /* Blu Ferrari (circa) */
+.footer {
+    @include fixed-footer-style;
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+
+    .footer-content { /* Stili per il contenitore */
+        display: flex;
+        align-items: center;
     }
 
-    .footer:hover span{
-    transform: scale(1); /*Impedisce lo scale al testo Jacopo Pierantozzi*/
+    span {
+        margin-right: 0.5rem; 
+        }
+    }   
+
+    .contact-link {
+        cursor: pointer;
+        text-decoration: none; 
+        color: inherit; 
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: #0675be;
+            color: #0675be;
+        }
     }
+
+
+    /* Stile per il contenitore principale */
+    .main-content {
+    min-height: calc(100vh - 60px);
+    padding-bottom: 60px;
+    }
+    
