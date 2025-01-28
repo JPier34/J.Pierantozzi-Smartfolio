@@ -6,6 +6,11 @@ h1 {
   margin-bottom: 1rem;
 }
 
+/* Font principale */
+.main-font {
+  font-family: "Source Code Pro", monospace;
+}
+
 /* Stili per i paragrafi */
 .paragraph {
   line-height: 1.6;
@@ -182,15 +187,15 @@ nav .space-x-2 {
 }
 
 .projects-heading {
-  color: yellow;
-  margin-top: 10.5rem;
-  font-size: 2.5rem;
+  margin-top: 10rem;
+  font-size: 4rem;
   font-weight: bold;
+  margin-top: 10rem;
 }
 @media (max-width: 768px) {
   .projects-heading {
     font-size: 2.5rem;
-    font-weight: bold;
+    margin-top: 12rem;
   }
 }
 
@@ -206,13 +211,36 @@ nav .space-x-2 {
 }
 
 .work-item-description {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-size: large;
+  font-weight: bold;
   color: #333;
   margin-top: 0.5rem;
+  font-family: "Lexend Giga", serif;
 }
 @media (min-width: 1024px) {
   .work-item-description {
-    font-size: 1.125rem;
+    font-size: 1.1625rem;
+  }
+}
+
+/* About */
+.about-heading {
+  margin-top: 10rem;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-top: -1rem;
+}
+@media (max-width: 768px) {
+  .about-heading {
+    font-size: 2.5rem;
+    margin-top: 12rem;
+  }
+}
+@media (max-width: 768px) {
+  .about-heading {
+    font-size: 2.5rem;
+    margin-top: -0.5rem;
   }
 }
 
