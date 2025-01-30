@@ -187,15 +187,31 @@ nav .space-x-2 {
 }
 
 .projects-heading {
-  margin-top: 10rem;
-  font-size: 4rem;
+  margin-top: -1rem;
+  font-size: 6rem;
   font-weight: bold;
-  margin-top: 10rem;
+  text-align: center;
+  font-weight: 900;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: -80px;
+  left: 160px;
+}
+@media (min-width: 820px) {
+  .projects-heading {
+    margin-top: 11rem;
+  }
 }
 @media (max-width: 768px) {
   .projects-heading {
     font-size: 2.5rem;
     margin-top: 12rem;
+  }
+}
+@media (min-width: 1020px) and (max-width: 1280px) {
+  .projects-heading {
+    margin-left: -6rem;
+    margin-top: -10rem;
   }
 }
 
@@ -211,7 +227,7 @@ nav .space-x-2 {
 }
 
 .work-item-description {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-size: large;
   font-weight: bold;
   color: #333;
@@ -220,30 +236,101 @@ nav .space-x-2 {
 }
 @media (min-width: 1024px) {
   .work-item-description {
-    font-size: 1.1625rem;
+    font-size: 1.15rem;
   }
 }
 
-/* About */
-.about-heading {
-  margin-top: 10rem;
-  font-size: 4rem;
+/* About 
+  .about-heading {
+    @include heading-style;
+    white-space: nowrap;
+
+    @media (max-width: 767px) {
+        font-size: 2.5rem;
+        margin-top: -0.7rem;
+
+      }
+
+      @media (min-width: 768px) {
+        font-size: 2.5rem;
+        margin-top: 3.5rem;
+
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 2rem;
+        margin-top: 2rem;
+
+      }*/
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  padding: 2rem;
+}
+.about-section .about-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20% 80%;
+  gap: 0;
+  width: 80%;
+  margin: 2rem auto;
+  position: relative;
+}
+.about-section .about-container .title {
+  grid-column: 1/3;
+  text-align: left;
+  align-self: start;
+  /*margin-bottom: 2.5rem; // Elimina il margine predefinito del titolo*/
+  font-size: 3rem;
   font-weight: bold;
-  margin-top: -1rem;
+  z-index: 2;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  /* width: 100%   //Se vuoi che il titolo si estenda per tutta la larghezza
+  padding: 1rem; //Aggiungi del padding se vuoi
+  background-color: rgba(255, 255, 255, 0.5); //Aggiungi un background color per farlo risaltare */
 }
-@media (max-width: 768px) {
-  .about-heading {
-    font-size: 2.5rem;
-    margin-top: 12rem;
-  }
+.about-section .about-container .description {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  align-self: flex-start;
+  z-index: 1;
 }
-@media (max-width: 768px) {
-  .about-heading {
-    font-size: 2.5rem;
-    margin-top: -0.5rem;
+.about-section .about-container .image {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  text-align: center;
+}
+
+.work-item {
+  display: grid;
+  gap: 1rem;
+}
+
+.work-item-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.work-item-description {
+  font-size: 1.1rem;
+  font-size: large;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0.5rem;
+  font-family: "Lexend Giga", serif;
+}
+@media (min-width: 1024px) {
+  .work-item-description {
+    font-size: 1.15rem;
   }
 }
 
+/* Footer */
 /* Mixin per lo stile del footer */
 .footer {
   background-color: black;
