@@ -326,14 +326,33 @@ nav .space-x-2 {
     .description {
         grid-column: 1 / 2; // Descrizione a sinistra
         grid-row: 2 / 3;
-        align-self: flex-start;
+        align-self: stretch;
         z-index: 1;
+        padding-inline: 1rem;
+        min-height: 350px;
+        min-width: 300px;
+        margin-right: 5px;
       }
-  
+
+      p {
+        text-align: left;
+      }
+
+      @media (max-width: 768px) {
+            grid-column: 1 / 3; // Occupy both columns
+            text-align: center; // Center the text
+            margin: 0 auto;  // Center the description container itself
+            width: 100%; // Or any other width you want
+      }
+    }
+
     .image {
         grid-column: 2 / 3; // Immagine a destra
         grid-row: 2 / 3;
-        text-align: center; // Centra l'immagine (se necessario)
+        align-self: stretch;
+
+        @media (max-width: 768px) { // Esempio: Nascondi l'immagine sotto i 768px (puoi cambiare il valore)
+            display: none;
       }
     }
 }
