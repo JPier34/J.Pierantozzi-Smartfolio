@@ -1,9 +1,236 @@
-<html>
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <body>
-            
-        </body>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacopo Pierantozzi | Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    
+    emailjs.init('t-aVo9mmWY-z_NidQ');
+
+    const form = document.getElementById('contact');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_19bd5kj', 'template_fsn6mbl', this) 
+        .then(function(response) {
+          console.log('Email sent successfully!', response);
+          alert('Message sent successfully!');
+          this.reset(); 
+        }, function(error) {
+          console.error('Error sending email:', error);
+          alert('An error occurred: ' + error.message); 
+        });
+    });
+  </script>
+
+    </script>
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+
+<body class="font-sans">
+
+
+    <nav class="sticky-menu w-full bg-black text-white py-2 sticky top-0 z-100">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-base main-font font-bold text-left">
+                <span>J.Pierantozzi</span>
+            </div>
+
+            <!-- Menu Links -->
+            <div class="menu-links text-center">
+                <a href="./index.html" class="menu-item hover:underline text-lg text-blue-200 font-semibold transition duration-300 ease-in-out">Home.</a>
+            </div>
+
+            <!-- Social Icons -->
+        <div class="social-icons flex items-center justify-start">
+            <div class="icon-container">
+                <a href="" class="menu-item hover:underline">
+                    <img src="./assets/img/email-envelope-white-icon.png" alt="email-icon" class="w-5 sm:w-7">
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="https://github.com/JPier34" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/img/github-mark-white.png" alt="github-icon" class="w-5 sm:w-7">
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="https://www.instagram.com/datboi_jpier/?hl=it" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/img/instagram-white-icon.png" alt="instagram-icon" class="w-5 sm:w-7">
+                </a></div>
+            </div>
+        </div> 
+    </nav>
+
+    <main id="bio" class="py-20 bg-slate-100 flex items-center justify-center">
+        <div class="container-bio mx-auto px-4">
+          <h1 class="block main-font text-left text-yellow-500 text-shadow">Bio.</h1>
+          <div class="container grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+           
+            <div>
+              <p class="mb-4">
+                I am Jacopo Pierantozzi, a blockchain developer, and a Real Estate operator.
+                <br>
+                I strongly believe in this field, and i think it's already changing the world.
+                <br>
+                I am passionate about technology and I am always looking for new challenges to improve my skills.
+                <br>
+                I am currently studying web development and I am looking for new opportunities to grow professionally.
+                <br>
+                I am always open to new ideas and collaborations, so feel free to contact me if you have any questions or suggestions.
+              </p>
+              <h3 class="text-2xl font-bold mb-2">Studies.</h3>
+              <ul class="list-disc pl-6 mb-4">
+                <li>
+                  <strong>High School Diploma</strong> at <strong>Istituto Tecnico Commerciale A.Capriotti</strong> (2015)
+                  <br>
+                  Here I studied mathematics, financing, and computer science.
+                  I learned how to solve complex problems and how to work with different technologies.
+                  This experience helped me develop my analytical skills and my ability to work in a team.
+                </li>
+
+                <li>  
+                  <strong>University Degree</strong> at <strong> Università Politecnica delle Marche </strong> (2018)
+                  <br>
+                  Here i studied Enterprise Finance and Innovation.
+                  I learned how to manage a company's finances and how to develop new business ideas.
+                  I studied law, which helped me understand the legal aspects of business.
+                </li>
+
+                <li>
+                  <strong>Blockchain Developer Master</strong> at <strong>Start2Impact University</strong> (2025)
+                  <br>
+                  Here I am currently learning how to develop blockchain applications using different programming languages.
+                  I learned what smart contracts, decentralized applications actually are and how to work with different blockchain platforms.
+                  This course helps me develop my programming skills and my understanding of blockchain technology.
+                </li>
+              </ul>
+              <h3 class="text-2xl font-bold mb-2">Professional experiences.</h3>
+              <ul class="list-disc pl-6 mb-4">
+                <li>
+                  <strong>Accountant</strong> at <strong>Sunservice S.r.l.</strong> (2014 - 2024)
+                  <br>
+                  Here i learned how to manage the company's finances and how to work with a team.
+                  I earned a lot of experience in this field, and I learned how to work under pressure.
+                  Sunservice S.r.l. is a company that works in the field of renewable energy, and I am proud to have been part of it.
+                <li> 
+                  <strong>Real Estate Operator</strong> at <strong>P.R. Gestioni S.r.l.</strong> (2024 - present)
+                  <br>
+                  I currently work in the real estate sector, where I am responsible for drafting contracts for various real estate companies.
+                  My role involves ensuring that all contractual agreements are legally sound and meet the needs of both the company and its clients.
+                  Additionally, I manage financial issues related to the construction field, which includes budgeting, financial planning, and overseeing financial transactions.
+                  This position allows me to utilize my skills in finance and contract management, contributing to the successful completion of real estate projects.
+                </li>
+              </ul>
+              <h3 class="text-2xl font-bold mb-2">Competences</h3>
+              <ul class="list-disc pl-6 mb-4">
+                <li>HTML/CSS language</li>
+                <li>AI applications</li>
+                <li>Accounting (Italian GAAP)</li>
+                <li>Financial reporting</li>
+                <li>Budgeting and forecasting</li>
+                <li>Data analysis</li>
+                <li>Real estate market analysis</li>
+                <li>Property valuation</li>
+                <li>Contract negotiation</li>
+                <li>Client relationship management</li>
+                <li>Blockchain technology (basic understanding)</li>
+                <li>Microsoft Office Suite (Excel, Word, PowerPoint)</li>
+                <li>Problem-solving</li>
+                <li>Attention to detail</li>
+                <li>Communication skills</li>
+                <li>Teamwork</li>
+                <li>Time management</li>
+                </ul>
+
+            <h3 class="text-2xl font-bold mb-2">Languages.</h3>
+              <ul class="list-disc pl-6 mb-4">
+                <li>Italian (native)</li>
+                <li>English (good)</li>
+                <li>Spanish (good)</li>
+              </ul>
+            </div>
+      
+            <div>
+              <h3 class="text-2xl font-bold mb-2 justify-start align-top">Passions and interests.</h3>
+              <p class="mb-4">
+                All my life i always loved sports, especially basketball and soccer, which i played for many years.
+                I am a big fan of the NBA. I am a huge AC Milan fan, and I always try to watch their games.
+                I also have a season ticket for the Sambenedettese Calcio, my local team.
+                I love going to the gym and working out, it helps me clear my mind and stay focused.
+                I am also passionate about technology and innovation, and I am always looking for new ways to improve my skills.
+              </p>
+      
+              <h3 class="text-2xl font-bold mb-2">Professional goals.</h3>
+              <p class="mb-4">
+                I am seeking a challenging role in the real estate sector where I can leverage my accounting experience, my understanding of blockchain technology, and my knowledge of the real estate market to contribute to innovative projects.
+                I am particularly interested in opportunities in companies that are exploring the use of blockchain technology in real estate transactions.
+                I am a highly motivated and results-oriented individual with a strong work ethic and a desire to learn and grow professionally.
+                During my career, i have lived in Spain for a while, and i smart-worked there, so i am open to doing it again.
+              </p>
+              </p>
+      
+            </div>
+          </div>
+        </div>
+    </main>
+
+    <section id="contact" class="py-20 bg-gray-100 flex items-center justify-center">
+        <div class="container-form mx-auto px-4">
+            <h1 class="text-yellow-500 text-shadow main-font block text-left whitespace-nowrap">Contact Me.</h1>
+            <div class="bg-slate-50 p-8 rounded-lg shadow-md">
+                <form action="https://formdepartment.com/" method="post">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="email" placeholder="John Doe" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full" required>
+                    </div>
+    
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@text.com" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full" required>
+                    </div>
+    
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" placeholder="Text me here!" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full h-32"
+                            required></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded shadow-md transition duration-300 ease-in-out">
+                        Submit
+                    </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    
+<footer class="footer">
+        <div class="footer-content">
+            <span>Jacopo Pierantozzi - 2025</span>
+        </div>
+</footer>
+
+
+</body>
 </html>

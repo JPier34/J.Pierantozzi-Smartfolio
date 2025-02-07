@@ -430,4 +430,45 @@ nav .space-x-2 {
 .main-content {
   min-height: calc(100vh - 60px);
   padding-bottom: 60px;
+}
+
+.container-bio {
+  width: 80%;
+}
+.container-bio h1 {
+  font-weight: bold;
+  font-size: 5rem;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+  line-height: 0.1em;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .container-bio h1 {
+    font-size: 2.5rem;
+  }
+}
+.container-bio h1 {
+  padding-bottom: 2.5rem;
+}
+
+.container-form {
+  width: 80%;
+}
+.container-form h1 {
+  font-weight: bold;
+  font-size: 5rem;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+  line-height: 0.1em;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .container-form h1 {
+    font-size: 2.5rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

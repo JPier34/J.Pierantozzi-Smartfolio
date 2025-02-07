@@ -531,3 +531,45 @@ nav .space-x-2 {
     min-height: calc(100vh - 60px);
     padding-bottom: 60px;
     }
+
+
+
+    // contact.html styles //
+
+    @mixin container-contact { 
+        width: 80%;
+
+            h1 {
+            font-weight: bold;
+            font-size: 5rem;
+            font-weight: bold;
+            z-index: 2;
+            position: relative;
+            line-height: 0.1em;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+            }    
+
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2.5rem;
+                }
+                
+            }
+    }
+
+    .container-bio {
+        @include container-contact;
+            h1 {           
+                padding-bottom: 2.5rem;
+                
+                }
+    }
+
+
+
+    .container-form {
+        @include container-contact;
+    }    
+
+        
