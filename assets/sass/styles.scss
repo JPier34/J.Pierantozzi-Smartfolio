@@ -573,3 +573,14 @@ main {
     }    
 
         
+
+    #bio {
+        opacity: 0; /* Inizialmente nascosto */
+        transition: opacity 1.5s ease-in-out; /* Transizione dell'opacità */
+      }
+      
+      /* Stile per mostrare il testo quando l'ancora è attiva */
+      #bio:target {
+        opacity: 1; /* Mostra il testo */
+      }
+    
