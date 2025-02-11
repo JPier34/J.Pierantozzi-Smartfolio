@@ -27,11 +27,10 @@
           alert('An error occurred: ' + error.message); 
         });
     });
-  </script>
 
     </script>
 
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
@@ -80,13 +79,14 @@
     </nav>
 
     <main id="bio" class="py-20 bg-slate-100 flex items-center justify-center">
-        <div class="container-bio mx-auto px-4">
+        <div class="container-bio mx-auto px-4 rounded-lg shadow-md">
           <h1 class="block main-font text-left text-yellow-500 text-shadow">Bio.</h1>
-          <div class="container grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <hr class="w-auto h-1 bg-yellow-500 mb-8">
+          <div class="container grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 items-stretch">
            
             <div>
               <p class="mb-4">
-                I am Jacopo Pierantozzi, a blockchain developer, and a Real Estate operator.
+                I am Jacopo Pierantozzi, a blockchain developer.
                 <br>
                 I strongly believe in this field, and i think it's already changing the world.
                 <br>
@@ -95,6 +95,8 @@
                 I am currently studying web development and I am looking for new opportunities to grow professionally.
                 <br>
                 I am always open to new ideas and collaborations, so feel free to contact me if you have any questions or suggestions.
+                <br>
+                I am also a Real Estate operator.
               </p>
               <h3 class="text-2xl font-bold mb-2">Studies.</h3>
               <ul class="list-disc pl-6 mb-4">
@@ -102,10 +104,9 @@
                   <strong>High School Diploma</strong> at <strong>Istituto Tecnico Commerciale A.Capriotti</strong> (2015)
                   <br>
                   Here I studied mathematics, financing, and computer science.
-                  I learned how to solve complex problems and how to work with different technologies.
                   This experience helped me develop my analytical skills and my ability to work in a team.
                 </li>
-
+                <br>
                 <li>  
                   <strong>University Degree</strong> at <strong> Università Politecnica delle Marche </strong> (2018)
                   <br>
@@ -113,12 +114,11 @@
                   I learned how to manage a company's finances and how to develop new business ideas.
                   I studied law, which helped me understand the legal aspects of business.
                 </li>
-
+                <br>
                 <li>
                   <strong>Blockchain Developer Master</strong> at <strong>Start2Impact University</strong> (2025)
                   <br>
-                  Here I am currently learning how to develop blockchain applications using different programming languages.
-                  I learned what smart contracts, decentralized applications actually are and how to work with different blockchain platforms.
+                  Here I learned what smart contracts, decentralized applications actually are and how to work with different blockchain platforms.
                   This course helps me develop my programming skills and my understanding of blockchain technology.
                 </li>
               </ul>
@@ -130,23 +130,24 @@
                   Here i learned how to manage the company's finances and how to work with a team.
                   I earned a lot of experience in this field, and I learned how to work under pressure.
                   Sunservice S.r.l. is a company that works in the field of renewable energy, and I am proud to have been part of it.
+                </li>
+                <br>
                 <li> 
                   <strong>Real Estate Operator</strong> at <strong>P.R. Gestioni S.r.l.</strong> (2024 - present)
                   <br>
                   I currently work in the real estate sector, where I am responsible for drafting contracts for various real estate companies.
-                  My role involves ensuring that all contractual agreements are legally sound and meet the needs of both the company and its clients.
                   Additionally, I manage financial issues related to the construction field, which includes budgeting, financial planning, and overseeing financial transactions.
                   This position allows me to utilize my skills in finance and contract management, contributing to the successful completion of real estate projects.
                 </li>
               </ul>
-              <h3 class="text-2xl font-bold mb-2">Competences</h3>
+          
+              <h3 class="text-2xl font-bold mb-2">Competences.</h3>
               <ul class="list-disc pl-6 mb-4">
                 <li>HTML/CSS language</li>
                 <li>AI applications</li>
-                <li>Accounting (Italian GAAP)</li>
+                <li>Accounting</li>
                 <li>Financial reporting</li>
                 <li>Budgeting and forecasting</li>
-                <li>Data analysis</li>
                 <li>Real estate market analysis</li>
                 <li>Property valuation</li>
                 <li>Contract negotiation</li>
@@ -159,7 +160,7 @@
                 <li>Teamwork</li>
                 <li>Time management</li>
                 </ul>
-
+            
             <h3 class="text-2xl font-bold mb-2">Languages.</h3>
               <ul class="list-disc pl-6 mb-4">
                 <li>Italian (native)</li>
@@ -167,26 +168,34 @@
                 <li>Spanish (good)</li>
               </ul>
             </div>
+            
       
-            <div>
-              <h3 class="text-2xl font-bold mb-2 justify-start align-top">Passions and interests.</h3>
-              <p class="mb-4">
-                All my life i always loved sports, especially basketball and soccer, which i played for many years.
-                I am a big fan of the NBA. I am a huge AC Milan fan, and I always try to watch their games.
+            <div class="bg-gray-200 shadow-md"> 
+
+              <div class="w-full mb-8 overflow-hidden mx-0 items-center justify-items-center">
+                <img src="./assets/img/bio-pic-2.jpg" alt="Bio Pic Jacopo Pierantozzi" class="object-cover grayscale">
+              </div>
+
+              <h3 class="text-2xl text-yellow-500 font-bold mb-2 p-6">Passions and interests.</h3>
+              <h3 class="mb-4 p-6">
+                All my life I always loved sports, especially basketball and soccer, which I played for many years.
+                I am a big fan of the NBA, and a huge AC Milan fan, and I always try to watch their games.
                 I also have a season ticket for the Sambenedettese Calcio, my local team.
                 I love going to the gym and working out, it helps me clear my mind and stay focused.
                 I am also passionate about technology and innovation, and I am always looking for new ways to improve my skills.
-              </p>
+              </h3>
       
-              <h3 class="text-2xl font-bold mb-2">Professional goals.</h3>
-              <p class="mb-4">
-                I am seeking a challenging role in the real estate sector where I can leverage my accounting experience, my understanding of blockchain technology, and my knowledge of the real estate market to contribute to innovative projects.
-                I am particularly interested in opportunities in companies that are exploring the use of blockchain technology in real estate transactions.
+              <h3 class="text-2xl text-yellow-500 font-bold mb-2 p-6">Professional goals.</h3>
+              <h3 class="mb-4 p-6">
+                I am seeking a challenging role in the blockchain sector where I can leverage my understanding of the FinTech sector. I would love to keep working in the real estate market too.
                 I am a highly motivated and results-oriented individual with a strong work ethic and a desire to learn and grow professionally.
-                During my career, i have lived in Spain for a while, and i smart-worked there, so i am open to doing it again.
-              </p>
-              </p>
+                During my career, I have lived in Spain for a while, and I smart-worked there, so I am open to doing it again.
+              </h3>
       
+
+              <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEXT_MoB9STkYf2IBZJeCGznYgzxNLE-xz0&keywords=jacopo%20pierantozzi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=35d7fa6e-6d04-465b-98c7-da2b4bd8c39a&sid=sdY&spellCorrectionEnabled=false" target="_blank">
+                <h3 class="mb-4 p-6 menu-item underline text-blue-500 justify-self-start text-xl"> My LinkedIn profile.</h3> 
+              </a>
             </div>
           </div>
         </div>

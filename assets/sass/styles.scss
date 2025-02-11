@@ -54,7 +54,6 @@ main {
 
 /* Stili per la navigazione */
 
-/* Stili generali */
 .menu-item {
     display: flex;
     justify-content: center;
@@ -62,16 +61,16 @@ main {
     cursor: pointer;
     transition: transform 0.7s ease-in-out, color 0.7 ease-in-out;
     text-decoration: none;
-    color: inherit;
-}
+    color: #fff;
 
-@media (hover: hover) {
-    .menu-item:hover {
+    &:hover {
         text-decoration: underline;
         transform: scale(1.15);
-        color: #0675be; /* Cambia colore al hover */
+        color: #0675be;
     }
 }
+
+
 
 /* Stili ACTIVE (per click/touch) */
 .menu-item:active {
@@ -80,37 +79,32 @@ main {
 }
    
 
-/* Stili per la navigazione */
-nav .space-x-2 {
-    display: flex;
-    gap: 0.5rem;
-}
-
-
 /* Stili per le icone social */
 .social-icons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 8px;
+
+    img {
+        height: auto;
+        display: block;
+
+        &:hover { /* Stili per il passaggio del mouse */
+            filter: grayscale(0%) sepia(100%) saturate(5) hue-rotate(170deg) brightness(0.9); // Filtro blu #0675be al hover
+        }
+    }
 }
 
 .icon-container {
     display: flex;
     justify-content: center;
     align-items: center; 
-    padding: 0 5px; /* Spazio tra le icone
-    */
+    padding: 0 5px; /* Spazio tra le icone */
+    
 }
 
-.social-icons img {
-    height: auto;
-    display: block;
-}
 
-.menu-links {
-    text-align: center;
-  }
 
 /* Stili per desktop */
 @media (min-width: 768px) {
@@ -128,11 +122,6 @@ nav .space-x-2 {
         padding: 0 10px;
     }
 }
-
-.hero-font {
-    font-family: 'Lexend Giga' , serif;
-}
-
 
 /* Stili per mobile (<= 768px) */
 @media (max-width: 768px) {
@@ -176,7 +165,7 @@ nav .space-x-2 {
 
 
 
-
+/* Stili per la sezione dei progetti */
 
 
 .work-item-photo {
@@ -227,7 +216,7 @@ nav .space-x-2 {
 
 .grid-container-projects {
     display: grid;
-    grid-template-columns: 15px 0.7fr 1fr 15px;
+    grid-template-columns: 15px 1fr 1fr 15px;
     grid-template-rows: auto 400px auto 400px auto;
     grid-template-areas: 
         "title title title title"
@@ -346,7 +335,7 @@ nav .space-x-2 {
 
 
 
-// about section styles //
+// stili per la sezione about //
 
      
 
@@ -390,7 +379,7 @@ nav .space-x-2 {
         align-self: stretch;
         z-index: 1;
         padding-inline: 0.5rem;
-        min-height: 500px;
+        min-height: 550px;
         min-width: 300px;
         margin-left: 15px; 
         margin-right: 15px;
@@ -516,8 +505,8 @@ nav .space-x-2 {
 
     .contact-link {
         cursor: pointer;
-        text-decoration: none; 
-        color: inherit; 
+        text-decoration: underline; 
+        color: #e2e8f0; 
         &:hover {
             text-decoration: underline;
             text-decoration-color: #0675be;
@@ -526,15 +515,13 @@ nav .space-x-2 {
     }
 
 
-    /* Stile per il contenitore principale */
-    .main-content {
-    min-height: calc(100vh - 60px);
-    padding-bottom: 60px;
-    }
+    
 
+    // fine index.html // 
 
+    // stili per contact.html //
 
-    // contact.html styles //
+    // mixin per le due sezioni //
 
     @mixin container-contact { 
         width: 80%;
@@ -558,15 +545,28 @@ nav .space-x-2 {
             }
     }
 
+    // stili per la sezione Bio //
+
     .container-bio {
         @include container-contact;
             h1 {           
                 padding-bottom: 2.5rem;
                 
                 }
+
+            p {
+                padding-bottom: 2.3rem; 
+                line-height: 2;
+            }    
+
+            ul {
+                padding-bottom: 2.5rem;
+            }
+            
+
     }
 
-
+    // stili per la sezione Contact //
 
     .container-form {
         @include container-contact;
