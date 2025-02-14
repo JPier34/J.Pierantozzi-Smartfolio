@@ -7,28 +7,43 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js" crossorigin="anonymous" defer></script>
   <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      emailjs.init('t-aVo9mmWY-z_NidQ');
+
+      const form = document.getElementById('contact');
+    const submitButton = form.querySelector("button[type='submit']");
     
-    emailjs.init('t-aVo9mmWY-z_NidQ');
+    if (!form) return;
 
-    const form = document.getElementById('contact');
-
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function (event) {
       event.preventDefault();
 
-      emailjs.sendForm('service_19bd5kj', 'template_fsn6mbl', this) 
-        .then(function(response) {
-          console.log('Email sent successfully!', response);
-          alert('Message sent successfully!');
-          this.reset(); 
-        }, function(error) {
-          console.error('Error sending email:', error);
-          alert('An error occurred: ' + error.message); 
+      // Disabilita il pulsante per evitare invii multipli
+      submitButton.disabled = true;
+      submitButton.innerText = "Sending...";
+
+      emailjs.sendForm('service_19bd5kj', 'template_fsn6mbl', form)
+        .then(
+          function (response) {
+            console.log('Email sent successfully!', response);
+            alert('Message sent successfully!');
+            form.reset();
+          },
+          function (error) {
+            console.error('Error sending email:', error);
+            alert('An error occurred while sending your message. Please try again later.');
+          }
+        )
+        .finally(() => {
+          // Riattiva il pulsante dopo l'invio
+          submitButton.disabled = false;
+          submitButton.innerText = "Submit";
         });
     });
-
-    </script>
+  });
+</script>
 
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +76,7 @@
             <!-- Social Icons -->
         <div class="social-icons flex items-center justify-start">
             <div class="icon-container">
-                <a href="#contact" class="menu-item hover:underline">
+                <a href="#contact-me" class="menu-item hover:underline">
                     <img src="../assets/img/email-envelope-white-icon.png" alt="email-icon" class="w-5 sm:w-7">
                 </a>
             </div>
@@ -188,7 +203,7 @@
               </h3>
       
 
-              <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEXT_MoB9STkYf2IBZJeCGznYgzxNLE-xz0&keywords=jacopo%20pierantozzi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=35d7fa6e-6d04-465b-98c7-da2b4bd8c39a&sid=sdY&spellCorrectionEnabled=false" target="_blank">
+              <a href="https://www.linkedin.com/in/jacopo-pierantozzi" target="_blank">
                 <h3 class="mb-4 p-6 menu-item underline text-blue-500 justify-self-start text-xl"> My LinkedIn profile.</h3> 
               </a>
             </div>
@@ -196,14 +211,14 @@
         </div>
     </main>
 
-    <section id="contact" class="py-20 bg-gray-100 flex items-center justify-center">
+    <section id="contact-me" class="py-20 bg-gray-100 flex items-center justify-center">
         <div class="container-form mx-auto px-4">
             <h1 class="text-yellow-500 text-shadow main-font block text-left whitespace-nowrap">Contact Me.</h1>
             <div class="bg-slate-50 p-8 rounded-lg shadow-md">
-                <form action="https://formdepartment.com/" method="post">
+                <form id="contact">
                     <div class="mb-4">
                         <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                        <input type="text" id="name" name="email" placeholder="John Doe" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full" required>
+                        <input type="text" id="name" name="name" placeholder="John Doe" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full" required>
                     </div>
     
                     <div class="mb-4">
