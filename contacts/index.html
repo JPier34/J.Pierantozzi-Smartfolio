@@ -3,47 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Jacopo Pierantozzi | Portfolio</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js" crossorigin="anonymous" defer></script>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function () {
-      emailjs.init('t-aVo9mmWY-z_NidQ');
-
-      const form = document.getElementById('contact');
-    const submitButton = form.querySelector("button[type='submit']");
-    
-    if (!form) return;
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // Disabilita il pulsante per evitare invii multipli
-      submitButton.disabled = true;
-      submitButton.innerText = "Sending...";
-
-      emailjs.sendForm('service_19bd5kj', 'template_fsn6mbl', form)
-        .then(
-          function (response) {
-            console.log('Email sent successfully!', response);
-            alert('Message sent successfully!');
-            form.reset();
-          },
-          function (error) {
-            console.error('Error sending email:', error);
-            alert('An error occurred while sending your message. Please try again later.');
-          }
-        )
-        .finally(() => {
-          // Riattiva il pulsante dopo l'invio
-          submitButton.disabled = false;
-          submitButton.innerText = "Submit";
-        });
-    });
-  });
-</script>
 
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +17,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="../site.webmanifest">
 </head>
 
 
@@ -251,5 +214,30 @@
 </footer>
 
 
+
+
+<script type="text/javascript" src="../assets/js/email.min.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            emailjs.init('t-aVo9mmWY-z_NidQ'); 
+
+            const form = document.getElementById('contact');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+
+                emailjs.sendForm('service_19bd5kj', 'template_fsn6mbl', form) 
+                    .then(function (response) {
+                        console.log('Email sent successfully!', response);
+                        alert('Messagge sent succesfully!');
+                        form.reset(); 
+                    }, function (error) {
+                        console.error('Error sending email:', error);
+                        alert('An error occurred: ' + error.message); 
+                    });
+            });
+        });
+    </script>
+
 </body>
+
 </html>
