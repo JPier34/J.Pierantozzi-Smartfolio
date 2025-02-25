@@ -34,24 +34,6 @@
             <div class="menu-links text-center">
                 <a href="../#main" class="menu-item hover:underline text-lg text-blue-200 font-semibold transition duration-300 ease-in-out">Home.</a>
             </div>
-
-            <!-- Social Icons -->
-        <div class="social-icons flex items-center justify-start">
-            <div class="icon-container">
-                <a href="#contact-me" class="menu-item hover:underline">
-                    <img src="../assets/img/email-envelope-white-icon.png" alt="email-icon" class="w-5 sm:w-7">
-                </a>
-            </div>
-            <div class="icon-container">
-                <a href="https://github.com/JPier34" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer">
-                    <img src="../assets/img/github-mark-white.png" alt="github-icon" class="w-5 sm:w-7">
-                </a>
-            </div>
-            <div class="icon-container">
-                <a href="https://www.instagram.com/datboi_jpier/?hl=it" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer">
-                    <img src="../assets/img/instagram-white-icon.png" alt="instagram-icon" class="w-5 sm:w-7">
-                </a></div>
-            </div>
         </div> 
     </nav>
 
@@ -167,78 +149,48 @@
                 During my career, I have lived in Spain for a while, and I smart-worked there, so I am open to doing it again.
               </h3>
       
+              <div class="w-full flex justify-center mt-6">
+                <a href="../assets/CV/Jacopo-Pierantozzi-CV.pdf" download class="bg-blue-500 text-white px-6 py-3 rounded-lg text-lg font-semibold mb-6 hover:bg-blue-600 transition">
+                  Download my CV
+                </a>
+            </div>
 
-              <a href="https://www.linkedin.com/in/jacopo-pierantozzi" target="_blank">
-                <h3 class="mb-4 p-6 menu-item underline text-blue-500 justify-self-start text-xl"> My LinkedIn profile.</h3> 
-              </a>
             </div>
           </div>
         </div>
     </main>
 
-    <section id="contact-me" class="py-20 bg-gray-100 flex items-center justify-center">
-        <div class="container-form mx-auto px-4">
-            <h1 class="text-yellow-500 text-shadow main-font block text-left whitespace-nowrap">Contact Me.</h1>
-            <div class="bg-slate-50 p-8 rounded-lg shadow-md">
-                <form id="contact">
-                    <div class="mb-4">
-                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full" required>
-                    </div>
     
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your.email@text.com" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full" required>
-                    </div>
-    
-                    <div class="mb-4">
-                        <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
-                        <textarea id="message" name="message" placeholder="Text me here!" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full h-32"
-                            required></textarea>
-                    </div>
-                    
-                    <div class="text-center">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded shadow-md transition duration-300 ease-in-out">
-                        Submit
-                    </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+    <footer class="footer">
+      <div class="footer-content">
+          <span>Jacopo Pierantozzi - 2025 |</span> 
 
-
-    
-<footer class="footer">
-        <div class="footer-content">
-            <span>Jacopo Pierantozzi - 2025</span>
-        </div>
+          <!-- Social Icons -->
+      <div class="social-icons flex items-center justify-start">
+          <div class="icon-container">
+            <a href="https://www.linkedin.com/in/jacopo-pierantozzi-46240b288/" target="_blank" class="menu-item" rel="noopener noreferrer" title="Jacopo Pierantozzi's LinkedIn profile">
+              <img src="../assets/img/linkedin-white-icon.png"
+                  alt="Jacopo Pierantozzi's LinkedIn icon"
+                  class="w-5 sm:w-7">
+          </a>
+          </div>
+          <div class="icon-container">
+              <a href="https://github.com/JPier34" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer" title="Jacopo Pierantozzi's GitHub profile">
+                  <img src="../assets/img/github-mark-white.png"
+                      alt="Jacopo Pierantozzi's GitHub icon"
+                      class="w-5 sm:w-7">
+              </a>
+          </div>
+          <div class="icon-container">
+              <a href="https://www.instagram.com/datboi_jpier/?hl=it" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer" title="Jacopo Pierantozzi's Instagram profile">
+                  <img src="../assets/img/instagram-white-icon.png"
+                      alt="Jacopo Pierantozzi's Instagram icon"
+                      class="w-5 sm:w-7">
+              </a></div>
+          </div>
+      </div>
 </footer>
 
-
-
-
-<script type="text/javascript" src="../assets/js/email.min.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            emailjs.init('t-aVo9mmWY-z_NidQ'); 
-
-            const form = document.getElementById('contact');
-            form.addEventListener('submit', function (event) {
-                event.preventDefault(); 
-
-                emailjs.sendForm('service_19bd5kj', 'template_fsn6mbl', form) 
-                    .then(function (response) {
-                        console.log('Email sent successfully!', response);
-                        alert('Messagge sent succesfully!');
-                        form.reset(); 
-                    }, function (error) {
-                        console.error('Error sending email:', error);
-                        alert('An error occurred: ' + error.message); 
-                    });
-            });
-        });
-    </script>
 
 </body>
 

@@ -79,70 +79,8 @@ main {
 }
    
 
-/* Stili per le icone social */
-.social-icons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 8px;
-
-    img {
-        height: auto;
-        display: block;
-
-        &:hover { /* Stili per il passaggio del mouse */
-            filter: grayscale(0%) sepia(100%) saturate(5) hue-rotate(170deg) brightness(0.9); // Filtro blu #0675be al hover
-        }
-    }
-}
-
-.icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    padding: 0 5px; /* Spazio tra le icone */
-    
-}
 
 
-
-/* Stili per desktop */
-@media (min-width: 768px) {
-    .menu-links {
-        display: flex;
-        justify-content: center;
-    }
-
-    .container {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between; /* Spacing between container elements */
-    }
-    .icon-container{
-        padding: 0 10px;
-    }
-}
-
-/* Stili per mobile (<= 768px) */
-@media (max-width: 768px) {
-    .icon-container {
-        padding: 0 0rem;
-    }
-    
-      .menu-links {
-        flex-shrink: 0; /* Assicura che il menu non si riduca troppo */ 
-        text-align: center;
-    }
-    
-      .social-icons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px; /* Riduce il gap su dispositivi mobili */
-    align-items: center;
-    }
-    
-
-    }
 
 
 /* Stili per la transizione della descrizione*/
@@ -498,10 +436,13 @@ main {
         align-items: center;
     }
 
-    span {
-        margin-right: 0.5rem; 
-        }
+
+    @media (max-width: 768px) {
+        span {
+            margin-right: 0.5rem; /* Spazio tra le sezioni */   
+    }
     }   
+}
 
     .contact-link {
         cursor: pointer;
@@ -514,6 +455,70 @@ main {
         }
     }
 
+/* Stili per le icone social */
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+
+    img {
+        height: auto;
+        display: block;
+
+        &:hover { /* Stili per il passaggio del mouse */
+            filter: grayscale(0%) sepia(100%) saturate(5) hue-rotate(170deg) brightness(0.9); // Filtro blu #0675be al hover
+        }
+    }
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 0 5px; /* Spazio tra le icone */
+    
+}
+
+
+
+/* Stili per desktop */
+@media (min-width: 768px) {
+    .menu-links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; /* Spacing between container elements */
+    }
+    .icon-container{
+        padding: 0 10px;
+    }
+}
+
+/* Stili per mobile (<= 768px) */
+@media (max-width: 768px) {
+    .icon-container {
+        padding: 0 0rem;
+    }
+    
+      .menu-links {
+        flex-shrink: 0; /* Assicura che il menu non si riduca troppo */ 
+        text-align: center;
+    }
+    
+      .social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px; /* Riduce il gap su dispositivi mobili */
+    align-items: center;
+    }
+    
+
+    }
 
     
 

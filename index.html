@@ -17,7 +17,7 @@
     <meta property="og:locale" content="en_IT">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
@@ -28,41 +28,68 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
 </head>
 
+<nav class="sticky-menu w-full bg-black py-2 sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex items-center justify-between relative">
+        <!-- Input per il toggle, usato come peer -->
+        <input type="checkbox" id="menu-toggle" class="hidden peer">
 
-    <nav class="sticky-menu w-full bg-black py-2 sticky top-0 z-50">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <!-- Logo -->
-            <div class="text-base main-font font-bold text-left">
-                <span>J.Pierantozzi</span>
+        <!-- Titolo a sinistra -->
+        <div class="text-base main-font font-bold text-left text-white">
+            <span>J.Pierantozzi</span>
+        </div>
+
+        <!-- Bottone toggle (hamburger / x) a destra -->
+        <div class="relative">
+            <label for="menu-toggle" class="text-white focus:outline-none cursor-pointer">
+                <!-- Icona hamburger (quando il menu è chiuso) -->
+                <svg class="h-6 w-6 transition-all duration-300 ease-in-out peer-checked:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Icona close (quando il menu è aperto) -->
+                <svg class="h-6 w-6 hidden transition-all duration-300 ease-in-out peer-checked:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </label>
+        </div>
+
+        <!-- Overlay invisibile che chiude il menu al clic -->
+        <label for="menu-toggle" class="fixed inset-0 hidden peer-checked:block z-40"></label>
+
+        <!-- Menu mobile con transizioni -->
+        <div class="absolute top-full right-0 w-48 bg-gray-800 z-50 transform -translate-y-4 opacity-0 pointer-events-none transition-all duration-300 ease-in-out peer-checked:translate-y-0 peer-checked:opacity-100 peer-checked:pointer-events-auto">
+            <div class="p-4">
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#works" class="menu-item hover:underline text-lg text-blue-200 font-semibold block cursor-pointer"
+                            onclick="document.getElementById('menu-toggle').checked = false;">
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" class="menu-item hover:underline text-lg text-blue-200 font-semibold block cursor-pointer"
+                            onclick="document.getElementById('menu-toggle').checked = false;">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact-me" class="menu-item hover:underline text-lg text-blue-200 font-semibold block cursor-pointer"
+                            onclick="document.getElementById('menu-toggle').checked = false;">
+                            Contact Me
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-            <!-- About -->
-            <div class="text-center">
-                <a href="#about" class="menu-item hover:underline text-lg text-blue-200 font-semibold transition duration-300 ease-in-out">About.</a>
-            </div>
-
-            <!-- Social Icons -->
-        <div class="social-icons flex items-center justify-start">
-            <div class="icon-container">
-                <a href="./contacts/#contact-me" class="menu-item">
-                    <img src="./assets/img/email-envelope-white-icon.png" alt="email-icon" class="w-5 sm:w-7">
-                </a>
-            </div>
-            <div class="icon-container">
-                <a href="https://github.com/JPier34" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/img/github-mark-white.png" alt="github-icon" class="w-5 sm:w-7">
-                </a>
-            </div>
-            <div class="icon-container">
-                <a href="https://www.instagram.com/datboi_jpier/?hl=it" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/img/instagram-white-icon.png" alt="instagram-icon" class="w-5 sm:w-7">
-                </a></div>
-            </div>
-        </div> 
-    </nav>
+        </div>
+    </div>
+</nav>
 
 
 
+
+  
+  
     <main id="main" class="relative h-screen w-full overflow-hidden text-blue-200">
         <div class="absolute inset-0 overflow-hidden">
             <img src="./assets/img/sfondo-testata.jpg" 
@@ -88,8 +115,6 @@
         </div>
     </main>
     
-
-
 <section id="works" class="py-20 bg-slate-100">
 
     <div class="grid-container-projects">
@@ -129,8 +154,6 @@
     </div>
 </section>
 
-
-
     <section id="about" class="about-section bg-slate-200">
                 <div class="about-container">
                     <h1 class="title text-yellow-500 text-shadow main-font">
@@ -148,6 +171,11 @@
                     <div class="border-t w-1/2 z-10 border-black my-4"></div>  
                     <hr>
                     <a href="./contacts/#bio" class="contact-link text-xl font-black">More about me on my bio.</a>
+                    <div class="w-full flex justify-center mt-6">
+                        <a href="./assets/CV/Jacopo-Pierantozzi-CV.pdf" download class="bg-blue-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-600 transition">
+                          Download my CV
+                        </a>
+                    </div>
                     </div>
                     <div class="image bg-opacity-30">
                 <img src="assets/img/foto-JP-3-vers.2.jpg" 
@@ -158,13 +186,88 @@
                 </div>   
     </section>
             
+    <section id="contact-me" class="py-20 bg-gray-100 flex items-center justify-center">
+        <div class="container-form mx-auto px-4">
+            <h1 class="text-yellow-500 text-shadow main-font block text-left whitespace-nowrap">Contact Me.</h1>
+            <div class="bg-slate-50 p-8 rounded-lg shadow-md">
+                <form id="contact">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full" required>
+                    </div>
     
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@text.com" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full" required>
+                    </div>
+    
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" placeholder="Text me here!" onfocus="this.placeholder = '' " class="border border-gray-300 px-3 py-2 w-full h-32"
+                            required></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded shadow-md transition duration-300 ease-in-out">
+                        Submit
+                    </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+ 
 <footer class="footer">
         <div class="footer-content">
-            <span>Jacopo Pierantozzi - 2025 |</span> <a href="./contacts/#contact-me" class="contact-link">contact me</a>
+            <span>Jacopo Pierantozzi - 2025 |</span> 
+
+            <!-- Social Icons -->
+        <div class="social-icons flex items-center justify-start">
+            <div class="icon-container">
+                <a href="https://www.linkedin.com/in/jacopo-pierantozzi-46240b288/" target="_blank" class="menu-item" rel="noopener noreferrer" title="Jacopo Pierantozzi's LinkedIn profile">
+                    <img src="./assets/img/linkedin-white-icon.png"
+                        alt="Jacopo Pierantozzi's LinkedIn icon"
+                        class="w-5 sm:w-7">
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="https://github.com/JPier34" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer" title="Jacopo Pierantozzi's GitHub profile">
+                    <img src="./assets/img/github-mark-white.png"
+                        alt="Jacopo Pierantozzi's GitHub icon"
+                        class="w-5 sm:w-7">
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="https://www.instagram.com/datboi_jpier/?hl=it" class="menu-item hover:underline" target="_blank" rel="noopener noreferrer" title="Jacopo Pierantozzi's Instagram profile">
+                    <img src="./assets/img/instagram-white-icon.png"
+                        alt="Jacopo Pierantozzi's Instagram icon"
+                        class="w-5 sm:w-7">
+                </a></div>
+            </div>
         </div>
 </footer>
 
+<script type="text/javascript" src="../assets/js/email.min.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            emailjs.init('t-aVo9mmWY-z_NidQ'); 
+
+            const form = document.getElementById('contact');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+
+                emailjs.sendForm('service_19bd5kj', 'template_fsn6mbl', form) 
+                    .then(function (response) {
+                        console.log('Email sent successfully!', response);
+                        alert('Messagge sent succesfully!');
+                        form.reset(); 
+                    }, function (error) {
+                        console.error('Error sending email:', error);
+                        alert('An error occurred: ' + error.message); 
+                    });
+            });
+        });
+    </script>
 
 </body>
 </html>
